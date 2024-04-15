@@ -1,0 +1,31 @@
+{
+  "name": "Synapse extension",
+  "description": "Synapse extension is a wallet for Nervos CKB",
+  "version": "0.0.15",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArjp+K74leZLvbeNbDDpf9sRzPN1uS1jih7OooA2JvmmVgZzBb9eRbaiLScbRDdS9IGhsxSNrj5/Li1Yv72INX8GJv1hCRys4JfBUFYAoCIOjRAzJgzmXVzxQy8EiKTEFrMo7sqIVkNvhccYySYG9DuHp6of/JnIxfdIrAD/BGwsC/5Mc/Vi8PZ/FtLo/5l4FtPu97TYk15RU0wYsPMIsDcP7GFnJVpOja8BKa0EfzVfRt3F05WJ0vGB2KTm/OrxH2IhTYqot/cvHeV/Q90xmuftpaQ4RSSuGZqKHhUoUvXilZj7r3948NYf/FZhQJukZT7VAXr7wclsdPXjZlbGcBwIDAQAB",
+  "id": "dbmnckdibkgoeppfmploopnghhgnnnmf",
+  "options_page": "",
+  "background": {
+    "scripts": ["js/browser-polyfill.min.js", "js/background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "logo-32.png"
+  },
+  "icons": {
+    "128": "logo-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["file://*/*", "http://*/*", "https://*/*"],
+      "js": ["js/browser-polyfill.min.js", "js/contentScript.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": ["js/injectedScript.js"],
+  "permissions": ["storage", "notifications"],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self'; object-src 'self'"
+}

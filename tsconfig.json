@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "outDir": "src/dist/js",
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@ui/*": ["src/ui/*"],
+      "@background/*": ["src/background/*"],
+      "@contentScript/*": ["src/contentScript/*"],
+      "@common/*": ["src/common/*"],
+      "@utils/*": ["src/utils/*"]
+    },
+    "sourceMap": true,
+    "jsx": "react",
+    "lib": ["es2015", "dom"],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true
+  }
+}
